@@ -7,6 +7,11 @@ Explore a collection of Spring Boot Proof of Concepts (POCs) in this repository,
 * **Best Practices:** Adheres to industry best practices and coding conventions for clean and maintainable code.
 * **Documentation:** Detailed documentation for each POC, providing insights into implementation details and usage instructions.
 
+## Prerequisites
+### Build Tools
+* [Gradle](https://gradle.org): A flexible build automation tool with a Groovy-based DSL.
+* [Maven](https://maven.apache.org): A project management and build tool using XML configuration and convention over configuration.
+
 ## POCs Includes
 * **RESTful API with Spring Boot:** Kickstart your project with a hands-on example showcasing the creation of a robust RESTful API using Spring Boot.
 * **Database Integration:** Explore seamless integration with databases, including MySQL, PostgreSQL, and MongoDB, to understand effective data management within Spring Boot applications.
