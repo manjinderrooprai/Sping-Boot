@@ -12,6 +12,15 @@ Explore a collection of Spring Boot Proof of Concepts (POCs) in this repository,
 * [Gradle](https://gradle.org): A flexible build automation tool with a Groovy-based DSL.
 * [Maven](https://maven.apache.org): A project management and build tool using XML configuration and convention over configuration.
 
+### [Java
+[Java](https://www.java.com) is a versatile, platform-independent programming language widely used in application development due to its portability, versatility, strong object-oriented principles, extensive ecosystem, community support, security features, scalability, and performance optimizations.
+
+### IDE
+An Integrated Development Environment is a software application that provides comprehensive tools and features to streamline the software development process, offering code editing, debugging, build automation, and other development-related functionalities.
+* [VScode](https://code.visualstudio.com)
+* [IntelliJ IDEA](https://www.jetbrains.com/idea)
+* [Eclipse](https://www.eclipse.org/ide/)
+
 ## POCs Includes
 * **RESTful API with Spring Boot:** Kickstart your project with a hands-on example showcasing the creation of a robust RESTful API using Spring Boot.
 * **Database Integration:** Explore seamless integration with databases, including MySQL, PostgreSQL, and MongoDB, to understand effective data management within Spring Boot applications.
