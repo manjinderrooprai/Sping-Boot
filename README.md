@@ -12,7 +12,7 @@ Explore a collection of Spring Boot Proof of Concepts (POCs) in this repository,
 * [Gradle](https://gradle.org): A flexible build automation tool with a Groovy-based DSL.
 * [Maven](https://maven.apache.org): A project management and build tool using XML configuration and convention over configuration.
 
-### [Java
+### Java
 [Java](https://www.java.com) is a versatile, platform-independent programming language widely used in application development due to its portability, versatility, strong object-oriented principles, extensive ecosystem, community support, security features, scalability, and performance optimizations.
 
 ### IDE
