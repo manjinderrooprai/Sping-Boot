@@ -34,4 +34,5 @@ An Integrated Development Environment is a software application that provides co
 * [Spring Boot GitHub](https://github.com/spring-projects/spring-boot)
 * [Spring Boot Pipeline](https://ci.spring.io/teams/spring-boot/pipelines/spring-boot-3.3.x?groups=Build)
 * [Maven Repository](https://mvnrepository.com/)
+* [Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
   
