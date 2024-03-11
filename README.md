@@ -1,4 +1,4 @@
-# Sping Boot
+# Spring Boot
 Explore a collection of Spring Boot Proof of Concepts (POCs) in this repository, showcasing the versatility and capabilities of the Spring Boot framework. Each POC is designed to address specific challenges or demonstrate key features of Spring Boot, making it an invaluable resource for developers seeking practical examples and solutions.
 
 ## Key Features
