@@ -1,4 +1,11 @@
-# Getting Started
+# Spring Boot CRUD operations with H2 Database 
+Carrying out CRUD operations with H2 within Spring Boot is the same as with other SQL databases.
+
+### H2 Database
+H2 Database is a lightweight, open-source relational database management system written in Java. It supports embedded and server modes, in-memory databases, SQL compatibility, transactions, and features a web-based console. It is known for its simplicity, speed, and versatility in various applications, offering both embedded and client-server deployment options.
+
+### OpenAPI
+OpenAPI is a specification for building and documenting RESTful APIs. It defines a standardized format (JSON or YAML) to describe an API's structure, endpoints, and functionality, promoting easy understanding, machine-readability, and interoperability. This allows for efficient development, documentation, and interaction with APIs.
 
 ### Reference Documentation
 For further reference, please consider the following sections:
