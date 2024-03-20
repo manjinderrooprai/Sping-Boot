@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication
 @EnableJpaRepositories
-public class SpringCrudOperationsApplication {
+public class SpringBootDataJpaH2 {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCrudOperationsApplication.class, args);
+		SpringApplication.run(SpringBootDataJpaH2.class, args);
 	}
 }

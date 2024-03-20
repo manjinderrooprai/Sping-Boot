@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication
 @EnableJpaRepositories
-public class SpringBootCacheApplication {
+public class SpringBootCacheRedis {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootCacheApplication.class, args);
+		SpringApplication.run(SpringBootCacheRedis.class, args);
 	}
 }
