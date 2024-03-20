@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication
 @EnableJpaRepositories
-public class SpringBootDataJpaApplication {
+public class SpringBootDataJpaMysql {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDataJpaApplication.class, args);
+		SpringApplication.run(SpringBootDataJpaMysql.class, args);
 	}
 }
