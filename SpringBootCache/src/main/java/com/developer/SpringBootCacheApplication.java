@@ -1,8 +1,7 @@
-package com.developer.application;
+package com.developer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
@@ -10,7 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication
 @EnableJpaRepositories
-@ComponentScan(basePackages = { "com.developer.application" })
 public class SpringBootCacheApplication {
 
 	public static void main(String[] args) {

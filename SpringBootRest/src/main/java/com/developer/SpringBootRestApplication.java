@@ -1,4 +1,4 @@
-package com.rooprai.tools.Springbootrest;
+package com.developer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
