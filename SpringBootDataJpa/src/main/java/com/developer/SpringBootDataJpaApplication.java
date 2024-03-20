@@ -11,9 +11,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories
 @ComponentScan(basePackages = { "com.developer.application" })
-public class SpringCrudOperationsApplication {
+public class SpringBootDataJpaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCrudOperationsApplication.class, args);
+		SpringApplication.run(SpringBootDataJpaApplication.class, args);
 	}
 }
