@@ -7,7 +7,8 @@ MySQL is a widely used open-source relational database management system. It is 
 ### OpenAPI
 OpenAPI is a specification for building and documenting RESTful APIs. It defines a standardized format (JSON or YAML) to describe an API's structure, endpoints, and functionality, promoting easy understanding, machine-readability, and interoperability. This allows for efficient development, documentation, and interaction with APIs.
 
-## Setup Instructions
+## Setup
+### Mysql Docker Container
 1. Install [Docker](https://www.docker.com/products/docker-desktop/) on your machine if not already installed.
 2. Pull the MySQL Docker image:
    `docker pull mysql:8.0`
@@ -17,6 +18,18 @@ OpenAPI is a specification for building and documenting RESTful APIs. It defines
    `docker exec -it mysql-server-8.0 bash`
 5. Access Mysql client:
    `mysql -h 127.0.0.1 -P 3306 -u root -p`
+### Application
+1. Clone the Repository:
+   `git@github.com:manjinderrooprai/SpringBoot.git`
+2. Open Directory:
+   `cd ~/SpringBoot`
+3. Open Project in Vscode:
+   `code .`
+4. Build the project:
+   `Gradle clean build -x test`
+5. Run the Application with main class.
+
+Once the application has started, you can access it by opening a web browser and navigating to http://localhost:8080 (assuming the application runs on port 8080).
 
 ### Reference Documentation
 For further reference, please consider the following sections:
