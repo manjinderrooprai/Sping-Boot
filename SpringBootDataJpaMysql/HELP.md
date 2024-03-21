@@ -25,11 +25,13 @@ OpenAPI is a specification for building and documenting RESTful APIs. It defines
    `cd ~/SpringBoot`
 3. Open Project in Vscode:
    `code .`
-4. Build the project:
+4. Go to specific project directory:
+   `cd SpringBootDataJpaMysql`
+5. Build the project:
    `Gradle clean build -x test`
-5. Run the Application with main class.
+6. Run the Application with main class.
 
-Once the application has started, you can access it by opening a web browser and navigating to http://localhost:8080 (assuming the application runs on port 8080).
+Once the application has started, you can access it by opening a web browser and navigating to http://localhost:8000 (assuming the application runs on port 8000).
 
 ### Reference Documentation
 For further reference, please consider the following sections:
