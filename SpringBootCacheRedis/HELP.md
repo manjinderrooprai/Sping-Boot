@@ -4,6 +4,9 @@ This project serves as a Proof of Concept (PoC) for integrating caching in a Spr
 ### Overview
 Caching is a technique used to store frequently accessed data in memory, thereby improving the performance and scalability of applications. In this PoC, we demonstrate how to configure and utilize caching in a Spring Boot application leveraging Redis, an in-memory data store.
 
+### Redis Cache
+Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, and geospatial indexes with radius queries.
+
 ### OpenAPI
 OpenAPI is a specification for building and documenting RESTful APIs. It defines a standardized format (JSON or YAML) to describe an API's structure, endpoints, and functionality, promoting easy understanding, machine-readability, and interoperability. This allows for efficient development, documentation, and interaction with APIs.
 
