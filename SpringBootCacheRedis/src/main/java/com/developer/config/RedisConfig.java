@@ -10,6 +10,11 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext.SerializationPair;
 
+/**
+ * Redis cache configuration
+ * 
+ * @author Manjinder.rooprai
+ */
 @SuppressWarnings("null")
 @EnableCaching
 @Configuration

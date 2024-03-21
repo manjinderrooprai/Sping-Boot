@@ -39,9 +39,9 @@ public class EmployeeService {
     }
 
     @Cacheable(value = "employees", key = "#p0")
-    public Employee findById(long employeeId) {
+    public Employee findById(long id) {
         log.info("get employee from database");
-        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(employeeId);
+        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(id);
         if (optionalEmployeeEntity.isEmpty()) {
             return null;
         }
@@ -58,13 +58,13 @@ public class EmployeeService {
     }
 
     @CachePut(cacheNames = "employees", key = "#p0")
-    public Employee update(long employeeId, Employee employee) {
+    public Employee update(long id, Employee employee) {
         log.info("update employee in database");
-        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(employeeId);
+        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(id);
         if (optionalEmployeeEntity.isEmpty()) {
             return null;
         }
-        employee.setId(employeeId);
+        employee.setId(id);
         @SuppressWarnings("null")
         EmployeeEntity employeeEntity = employeeRepository
                 .save(objectMapper.convertValue(employee, EmployeeEntity.class));
@@ -72,9 +72,9 @@ public class EmployeeService {
     }
 
     @CacheEvict(cacheNames = "employees", allEntries = true)
-    public void delete(long employeeId) {
+    public void delete(long id) {
         log.info("delete employee in database");
-        employeeRepository.findById(employeeId).ifPresent(employee -> employeeRepository.delete(employee));
+        employeeRepository.findById(id).ifPresent(employee -> employeeRepository.delete(employee));
     }
 
     @CacheEvict(cacheNames = "employees", allEntries = true)

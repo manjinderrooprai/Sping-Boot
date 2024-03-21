@@ -34,9 +34,9 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employeeList);
     }
 
-    @GetMapping("/{employeeId}")
-    public ResponseEntity<Employee> findById(@PathVariable(required = true, value = "employeeId") long employeeId) {
-        Employee employee = employeeService.findById(employeeId);
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> findById(@PathVariable(required = true, value = "id") long id) {
+        Employee employee = employeeService.findById(id);
         return ResponseEntity.ok().body(employee);
     }
 
@@ -44,22 +44,22 @@ public class EmployeeController {
     public ResponseEntity<Employee> save(@RequestBody(required = true) Employee employee) {
         Employee savedEmployee = employeeService.save(employee);
         URI uri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/{employeeId}")
+                .path("/{id}")
                 .buildAndExpand(savedEmployee.getId())
                 .toUri();
         return ResponseEntity.created(uri).body(savedEmployee);
     }
 
-    @PutMapping("/{employeeId}")
-    public ResponseEntity<Employee> update(@PathVariable(required = true, value = "employeeId") long employeeId,
+    @PutMapping("/{id}")
+    public ResponseEntity<Employee> update(@PathVariable(required = true, value = "id") long id,
             @RequestBody(required = true) Employee employee) {
-        Employee updatedEmployee = employeeService.update(employeeId, employee);
+        Employee updatedEmployee = employeeService.update(id, employee);
         return ResponseEntity.ok().body(updatedEmployee);
     }
 
-    @DeleteMapping("/{employeeId}")
-    public ResponseEntity<String> delete(@PathVariable(required = true, value = "employeeId") long employeeId) {
-        employeeService.delete(employeeId);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable(required = true, value = "id") long id) {
+        employeeService.delete(id);
         return ResponseEntity.ok().body("Deleted successfully...!");
     }
 
