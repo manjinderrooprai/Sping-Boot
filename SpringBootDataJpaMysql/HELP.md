@@ -1,11 +1,22 @@
 # Spring Boot Data Jpa
-This project demonstrates a simple Spring Boot application configured with Spring Data JPA to interact with a MySQL database.
+This project demonstrates a simple Spring Boot application configured with Spring Data JPA to interact with a MySQL database running in a Docker container.
 
 ### MySQL
 MySQL is a widely used open-source relational database management system. It is known for its reliability, performance, and ease of use. In this project, MySQL serves as the database backend for storing and managing application data.
 
 ### OpenAPI
 OpenAPI is a specification for building and documenting RESTful APIs. It defines a standardized format (JSON or YAML) to describe an API's structure, endpoints, and functionality, promoting easy understanding, machine-readability, and interoperability. This allows for efficient development, documentation, and interaction with APIs.
+
+## Setup Instructions
+1. Install [Docker](https://www.docker.com/products/docker-desktop/) on your machine if not already installed.
+2. Pull the MySQL Docker image:
+   `docker pull mysql:8.0`
+3. Run the MySQL Docker container:
+   `docker run --name mysql-server-8.0 -e MYSQL_ROOT_PASSWORD=my_password -d -p 3306:3306 mysql:8.0`
+4. Bash to container:
+   `docker exec -it mysql-server-8.0 bash`
+5. Access Mysql client:
+   `mysql -h 127.0.0.1 -P 3306 -u root -p`
 
 ### Reference Documentation
 For further reference, please consider the following sections:
