@@ -27,9 +27,9 @@ public class OpenApiConfig {
         public OpenAPI openApi() {
                 return new OpenAPI()
                                 .info(new Info()
-                                                .title("Spring boot curd operations")
+                                                .title("Spring boot cache redis")
                                                 .version("1.0.0-SNAPSHOT")
-                                                .description("This is a sample CRUD application using spring data")
+                                                .description("This is a sample cache redis application using spring data")
                                                 .contact(new Contact().name("Manjinder Rooprai")
                                                                 .url("https://github.com/manjinderrooprai"))
                                                 .license(new License()
