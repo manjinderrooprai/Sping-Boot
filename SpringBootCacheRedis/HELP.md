@@ -10,6 +10,32 @@ Redis is an open-source, in-memory data structure store that can be used as a da
 ### OpenAPI
 OpenAPI is a specification for building and documenting RESTful APIs. It defines a standardized format (JSON or YAML) to describe an API's structure, endpoints, and functionality, promoting easy understanding, machine-readability, and interoperability. This allows for efficient development, documentation, and interaction with APIs.
 
+## Setup
+### Redis Docker Container
+1. Install [Docker](https://www.docker.com/products/docker-desktop/) on your machine if not already installed.
+2. Pull the Redis Docker image:
+   `docker pull redis:7.2.4
+3. Run the Redis Docker container:
+   `docker run --name redis-server-7.2.4 -d -p 6379:6379 redis:7.2.4`
+4. Bash to container:
+   `docker exec -it redis-server-7.2.4 bash`
+5. Access Redis client:
+   `redis-cli -r 5 INCR counter_value`
+### Application
+1. Clone the Repository:
+   `git@github.com:manjinderrooprai/SpringBoot.git`
+2. Open Directory:
+   `cd ~/SpringBoot`
+3. Open Project in Vscode:
+   `code .`
+4. Go to specific project directory:
+   `cd SpringBootCacheRedis`
+5. Build the project:
+   `Gradle clean build -x test`
+6. Run the Application with main class.
+
+Once the application has started, you can access it by opening a web browser and navigating to http://localhost:8000 (assuming the application runs on port 8000).
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
