@@ -1,3 +1,4 @@
+```mermaid
 graph TD;
 
     subgraph "Client" 
@@ -36,7 +37,7 @@ graph TD;
         H --> M[Logging]
         H --> N[Security]
     end
-
+```
     subgraph "Deployment"
         L --> O[Docker]
         L --> P[Kubernetes]
