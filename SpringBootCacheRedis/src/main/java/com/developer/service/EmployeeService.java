@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.developer.entity.EmployeeEntity;
@@ -13,9 +16,12 @@ import com.developer.utils.UtilityHelper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Manjinder.rooprai
  */
+@Slf4j
 @Service
 public class EmployeeService {
 
@@ -24,49 +30,65 @@ public class EmployeeService {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
+    @Cacheable(value = "employees")
     public List<Employee> findAll() {
+        log.info("get all the employees from database");
         List<EmployeeEntity> EmployeeEntityList = employeeRepository.findAll();
         return objectMapper.convertValue(EmployeeEntityList, new TypeReference<List<Employee>>() {
         });
     }
 
-    public Employee findById(int id) {
-        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(id);
+    @Cacheable(value = "employees", key = "#p0")
+    public Employee findById(long employeeId) {
+        log.info("get employee from database");
+        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(employeeId);
         if (optionalEmployeeEntity.isEmpty()) {
             return null;
         }
         return objectMapper.convertValue(optionalEmployeeEntity.get(), Employee.class);
     }
 
+    @CacheEvict(cacheNames = "employees", allEntries = true)
     public Employee save(Employee employee) {
+        log.info("save employee in database");
         @SuppressWarnings("null")
         EmployeeEntity employeeEntity = employeeRepository
                 .save(objectMapper.convertValue(employee, EmployeeEntity.class));
         return objectMapper.convertValue(employeeEntity, Employee.class);
     }
 
-    public Employee update(int id, Employee employee) {
-        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(id);
+    @CachePut(cacheNames = "employees", key = "#p0")
+    public Employee update(long employeeId, Employee employee) {
+        log.info("update employee in database");
+        Optional<EmployeeEntity> optionalEmployeeEntity = employeeRepository.findById(employeeId);
         if (optionalEmployeeEntity.isEmpty()) {
             return null;
         }
-        employee.setId(id);
+        employee.setId(employeeId);
         @SuppressWarnings("null")
         EmployeeEntity employeeEntity = employeeRepository
                 .save(objectMapper.convertValue(employee, EmployeeEntity.class));
         return objectMapper.convertValue(employeeEntity, Employee.class);
     }
 
-    public void delete(int id) {
-        employeeRepository.findById(id).ifPresent(Employee -> employeeRepository.delete(Employee));
+    @CacheEvict(cacheNames = "employees", allEntries = true)
+    public void delete(long employeeId) {
+        log.info("delete employee in database");
+        employeeRepository.findById(employeeId).ifPresent(employee -> employeeRepository.delete(employee));
     }
 
+    @CacheEvict(cacheNames = "employees", allEntries = true)
     public List<Employee> populateEmployees() {
+        log.info("populate employees in database");
         @SuppressWarnings("null")
         List<EmployeeEntity> listOfEmployeeEntity = employeeRepository
                 .saveAllAndFlush(UtilityHelper.employeeSupplier.get());
         return objectMapper.convertValue(listOfEmployeeEntity, new TypeReference<List<Employee>>() {
         });
+    }
+
+    @CacheEvict(cacheNames = "employees", allEntries = true)
+    public void cacheEvict() {
     }
 
 }

@@ -7,5 +7,5 @@ import com.developer.entity.EmployeeEntity;
 /**
  * @author Manjinder.rooprai
  */
-public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Integer> {
+public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Long> {
 }

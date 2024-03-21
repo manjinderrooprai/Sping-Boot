@@ -34,9 +34,9 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employeeList);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Employee> findById(@PathVariable int id) {
-        Employee employee = employeeService.findById(id);
+    @GetMapping("/{employeeId}")
+    public ResponseEntity<Employee> findById(@PathVariable(required = true, value = "employeeId") long employeeId) {
+        Employee employee = employeeService.findById(employeeId);
         return ResponseEntity.ok().body(employee);
     }
 
@@ -44,26 +44,33 @@ public class EmployeeController {
     public ResponseEntity<Employee> save(@RequestBody(required = true) Employee employee) {
         Employee savedEmployee = employeeService.save(employee);
         URI uri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/{id}")
+                .path("/{employeeId}")
                 .buildAndExpand(savedEmployee.getId())
                 .toUri();
         return ResponseEntity.created(uri).body(savedEmployee);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Employee> update(@PathVariable int id, @RequestBody(required = true) Employee employee) {
-        Employee updatedEmployee = employeeService.update(id, employee);
+    @PutMapping("/{employeeId}")
+    public ResponseEntity<Employee> update(@PathVariable(required = true, value = "employeeId") long employeeId,
+            @RequestBody(required = true) Employee employee) {
+        Employee updatedEmployee = employeeService.update(employeeId, employee);
         return ResponseEntity.ok().body(updatedEmployee);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> delete(@PathVariable int id) {
-        employeeService.delete(id);
+    @DeleteMapping("/{employeeId}")
+    public ResponseEntity<String> delete(@PathVariable(required = true, value = "employeeId") long employeeId) {
+        employeeService.delete(employeeId);
         return ResponseEntity.ok().body("Deleted successfully...!");
     }
 
     @GetMapping("/populate")
     public ResponseEntity<List<Employee>> populateEmployees() {
         return ResponseEntity.ok().body(employeeService.populateEmployees());
+    }
+
+    @GetMapping("/cache/evict")
+    public ResponseEntity<String> cacheEvict() {
+        employeeService.cacheEvict();
+        return ResponseEntity.ok().body("Cache Evict successfully...!");
     }
 }

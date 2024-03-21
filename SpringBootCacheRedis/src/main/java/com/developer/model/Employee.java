@@ -1,14 +1,16 @@
 package com.developer.model;
 
+import java.io.Serializable;
+
 import lombok.Data;
 
 /**
  * @author Manjinder.rooprai
  */
 @Data
-public class Employee {
+public class Employee implements Serializable{
 
-    private Integer id;
+    private long id;
 
     private String firstName;
 

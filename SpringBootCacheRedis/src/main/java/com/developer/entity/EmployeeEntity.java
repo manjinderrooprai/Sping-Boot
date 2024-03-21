@@ -21,7 +21,7 @@ public class EmployeeEntity implements Serializable {
 
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
 
     @Column(name = "first_name")
     private String firstName;
