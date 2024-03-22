@@ -21,6 +21,22 @@ An Integrated Development Environment is a software application that provides co
 * [IntelliJ IDEA](https://www.jetbrains.com/idea)
 * [Eclipse](https://www.eclipse.org/ide/)
 
+## Setup
+### Application
+1. **Clone the Repository:**
+   `git@github.com:manjinderrooprai/SpringBoot.git`
+2. **Open Directory:**
+   `cd ~/SpringBoot`
+3. **Open Project in Vscode:**
+   `code .`
+4. **Go to specific project directory:**
+   `cd Specific-project`
+5. **Build the project:**
+   `Gradle clean build -x test`
+6. **Run the Application with main class.**
+
+Once the application has started, you can access it by opening a web browser and navigating to http://localhost:8000 (assuming the application runs on port 8000).
+
 ## POCs Includes
 * **RESTful API with Spring Boot:** Kickstart your project with a hands-on example showcasing the creation of a robust RESTful API using Spring Boot.
 * **Database Integration:** Explore seamless integration with databases, including MySQL, PostgreSQL, and MongoDB, to understand effective data management within Spring Boot applications.
