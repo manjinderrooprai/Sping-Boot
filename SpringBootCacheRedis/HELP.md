@@ -4,6 +4,23 @@ This project serves as a Proof of Concept (PoC) for integrating caching in a Spr
 ### Overview
 Caching is a technique used to store frequently accessed data in memory, thereby improving the performance and scalability of applications. In this PoC, we demonstrate how to configure and utilize caching in a Spring Boot application leveraging Redis, an in-memory data store.
 
+### Spring Boot Cache
+Spring Boot offers a caching abstraction layer that simplifies cache integration. Here's the general flow:
+1. **Enable Caching:** Annotate your main application class with @EnableCaching. This activates caching functionality.
+2. **Caching Annotations:** Use annotations like @Cacheable, @CachePut, and @CacheEvict to mark methods for caching behavior.
+   1. **@Cacheable:** This method's result gets cached. Subsequent calls with the same arguments retrieve data from the cache if available.
+   2. **@CachePut:** Updates the cache with the method's return value after successful execution.
+   3. **@CacheEvict:** Removes specific cache entries based on arguments or conditions.
+3. **Cache Configuration:**
+   - **Auto-configuration:** Spring Boot auto-configures a basic cache manager if necessary.
+   - **Custom configuration:** You can create a custom CacheManager bean for more control over caching behavior (cache names, expiration times).
+4. **Cache Provider:** Spring Boot supports various cache providers like Redis, EhCache, and Caffeine. You can choose a provider based on your requirements.
+
+#### Benefits of Spring Boot Caching:
+1. **Improved Performance:** Reduces database load, leading to faster response times.
+2. **Scalability:** Makes applications more scalable by handling increased traffic efficiently.
+3. **Reduced Costs:** Lower database load can translate to cost savings (depending on your database model).
+
 ### Redis Cache
 Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, and geospatial indexes with radius queries.
 
